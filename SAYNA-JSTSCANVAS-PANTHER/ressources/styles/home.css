@@ -1,0 +1,722 @@
+/* Some extras */
+
+/* scrollbar */
+
+html::-webkit-scrollbar-track {
+  background-color: #24334f;
+}
+
+html::-webkit-scrollbar {
+  width: 6px;
+  background-color: #F5F5F5;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #c9c8c87a;
+  border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background-color: #b3b2b26c;
+}
+
+html::-webkit-scrollbar-corner {
+  background-color: #1b2538;
+}
+
+
+/* text animation */
+
+.text-container {
+    opacity: 0;
+    animation: slide-in 1s forwards;
+  }
+  
+  @keyframes slide-in {
+    0% {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .slide-left {
+    transition: transform 0.4s;
+  }
+  
+  .slide-right {
+    transition: transform 0.4s;
+  }
+  
+  .slide-left:hover {
+    transform: translateX(-10px);
+  }
+  
+  .slide-right:hover {
+    transform: translateX(10px);
+  }
+
+  /* SLIDE IN ANIMATION */
+
+  h1, h2, p {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  h1, h2, p, a, img {
+    animation: 1s slide-right;
+  }
+  
+  @keyframes slide-right {
+    from {
+      margin-left: -100%;
+    }
+  
+    to {
+      margin-left: 0%;
+    }
+  }
+  
+   /* SLIDE IN ANIMATION END */
+   
+:root {
+  --violet-primaire: #3D2DA6;
+  --violet-secondaire: #07338C;
+  --violet-tertiaire: #021740;
+  --white: #FFFFFF;
+  --white-primaire: #F2CEF2;
+  --white-violet-1: #9E91B7;
+  --white-violet-2: #DF99F2;
+}
+
+/* Definition des typographies  */
+@font-face {
+  font-family: "beyno";
+  src: url("fonts/BEYNO.ttf");
+}
+@font-face {
+  font-family: "cantarell";
+  src: url("fonts/Cantarell-Regular.ttf");
+}
+@font-face {
+  font-family: "panthera";
+  src: url("fonts/panthera.otf");
+}
+@font-face {
+  font-family: "WakandaForever";
+  src: url("fonts/WakandaForever-Regular.ttf");
+}
+/* Fin typographie */
+/* Definition de style global */
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  background: none;
+  -webkit-text-stroke: none
+}
+
+h1 {
+  font-family: "panthera";
+  font-size: 68px;
+  font-style: regular;
+  color: var(--white-violet-1);
+  margin: 10px 0px;
+  font-weight: lighter;
+}
+
+h2,
+h3 {
+  font-family: "beyno";
+  font-size: 32px;
+  font-style: regular;
+  color: var(--white-violet-1);
+  font-weight: lighter;
+}
+
+p {
+  font-family: "cantarell";
+  font-size: 14px;
+  color: white;
+  font-weight: lighter;
+}
+
+body {
+  background-image: url("../assets/arrière_plan.png") ;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.btn-form {
+  font-family: "cantarell";
+  font-style: bold;
+  width: 174px;
+  height: 54px;
+  border-radius: 38px;
+  color: var(--violet-tertiaire);
+  border: 0;
+  background-color: var(--white-primaire);
+}
+
+/* ### POPUP BOX  */
+.box-popup {
+  position: fixed;
+  top: 20%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  background: linear-gradient(to bottom, #3D2DA6 10%, #021740 100%);
+}
+.box-popup .popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 80%;
+  border-radius: 25px;
+  background: linear-gradient(to bottom, #9E91B7 30%, #3D2DA6 100%);
+}
+.box-popup .popup p {
+  text-transform: uppercase;
+  font-family: "cantarell";
+  font-size: 20px;
+}
+.box-popup .popup a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--viloet-tertiaire);
+  background-color: var(--white-primaire);
+  border-radius: 25px;
+  padding: 15px 20px;
+  margin: 50px 0px;
+}
+.box-popup .popup .chrono {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.box-popup .popup .chrono #hour {
+  display: block;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .box-popup {
+    top: 15%;
+    left: 5%;
+    width: 90%;
+    height: 70%;
+  }
+}
+/* FIN POPUP  */
+.social-logo-header {
+  position: absolute;
+  top: 0;
+  left: 2.5%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 3px solid var(--white-violet-1);
+  border-bottom: 0;
+  border-top: 0;
+  border-right: 0;
+}
+.social-logo-header .ligne {
+  height: 40vh;
+  border: 2px solid var(--white-violet-1);
+}
+.social-logo-header .icon-social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.social-logo-header .icon-social img {
+  margin: 0px;
+  margin: 10px 10px;
+  padding-top: 5px;
+}
+.icon-social :hover{
+  filter: brightness(0) saturate(100%) invert(100%) sepia(89%) saturate(0%) hue-rotate(235deg) brightness(104%) contrast(101%);
+}
+
+#div-canvas {
+  z-index: 2;
+  position: fixed;
+  top: 10%;
+  left: 0;
+  width: 100%;
+}
+
+/* Fin de style global */
+/* Propriete style header  */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  height: 100px;
+}
+header .logo-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+header .logo-header img {
+  margin: 5px;
+}
+
+header .menu ul li {
+  display: inline-block;
+  margin: 30px;
+}
+
+header .menu ul li a {
+  text-decoration: none;
+  font-family: "beyno";
+  font-size: 20px;
+  color: var(--white);
+}
+
+header .menu ul li a:hover,
+header .menu .active {
+  transform: scale(1.1);
+  color: #9e91b7;
+  transition: .1s ease-in-out;
+}
+
+/* HOVER EFFECT MENU */
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: var(--rosé1);
+  text-decoration: none;
+}
+
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--rosé1);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after,
+.hover-underline-animation.active::after 
+{
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Fin style Header */
+/* ######################## PROPRIETE RESPONSIVE ######################## */
+@media (max-width: 800px) {
+  /* feuille de style menu */
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  header .menu ul li {
+    display: block;
+    margin: 20px;
+    text-align: center;
+  }
+  /* Fin menu  */
+}
+/* Definition style footer */
+footer {
+  background-image: url("../assets/back_footer.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0px;
+}
+footer .logo-footer {
+  background-image: url("../assets/Group 2052.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 385px;
+  width: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 50px;
+}
+footer .policies {
+  display: flex;
+  flex-direction: column;
+  height: 385px;
+  margin-left: 50px;
+}
+footer .policies .link {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+footer .policies .link .titre {
+  font-family: "cantarell";
+  font-size: 22px;
+  color: var(--white);
+  letter-spacing: 0.28em;
+  margin-bottom: 25px;
+}
+footer .policies .link .pages ul li {
+  display: block;
+  margin-bottom: 10px;
+}
+footer .policies .link .pages ul li a {
+  text-decoration: none;
+  font-family: "cantarell";
+  font-size: 16px;
+  color: var(--white);
+}
+footer .policies .link .social .social-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .policies .link .social .social-logo img:hover {
+  /* zoom: 1.1; */
+  transform: scale(1.1);
+}
+footer .policies .condition-right {
+  text-decoration: none;
+  font-family: "cantarell";
+  font-size: 14px;
+  color: var(--white);
+  align-items: center;
+  margin-top: 100px;
+}
+footer .policies .condition-right p span {
+  font-family: " sans-serif";
+  font-size: 5em;
+  border-radius: 50%;
+}
+
+/* Fin style footer */
+/* ######################## PROPRIETE RESPONSIVE ######################## */
+@media (max-width: 800px) {
+  /* feuille de style footer */
+  footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  footer .policies {
+    margin: 0px;
+    height: auto;
+  }
+  footer .policies .link {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  footer .policies .link .pages,
+footer .policies .link .social {
+    margin: 20px 0px;
+  }
+  footer .policies .condition-right {
+    margin-top: 10px;
+  }
+  /* fin footer */
+}
+/* FEUILLE DE STYLE SPECIALEMENT POUR LA PAGE INDEX */
+/* Propriete de la section black panther */
+.section-panther {
+  background-image: url("../assets/1_Landing_page/Pantherhome1..png");
+  background-size: contain;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  height: 80vh;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.section-panther .intro-panther {
+  margin-left: 12%;
+}
+.section-panther .intro-panther .sous-titre {
+  margin-bottom: 25px;
+}
+.section-panther .intro-panther .texte-intro {
+  display: block;
+  width: 500px;
+  margin-bottom: 10px;
+}
+.section-panther .intro-panther a {
+  color: var(--white-primaire);
+  font-family: "cantarell";
+}
+
+.container-slides {
+  margin-left: 5%;
+  background-color: var(--violet-tertiaire);
+  display: flex;
+}
+.container-slides .card {
+  display: flex;
+  align-items: center;
+  height: 300px;
+}
+.container-slides .card img {
+  width: 295px;
+  height: 300px;
+}
+.container-slides .card .img-active {
+  width: 386px;
+  height: 346px;
+  margin-left: 40px;
+}
+.container-slides .card .decription-slide {
+  clear: left;
+  margin-top: 30px;
+  margin: 0px 30px;
+}
+.container-slides .card .decription-slide .titre-slide {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+.container-slides .card .decription-slide .texte-slide {
+  text-align: justify;
+  margin-bottom: 10px;
+}
+.container-slides .card .decription-slide a {
+  color: var(--white-primaire);
+  font-family: "cantarell";
+}
+
+#section-slide {
+  position: relative;
+}
+
+.box-btn-next {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  top: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), #000000);
+  height: 300px;
+  width: 200px;
+}
+.box-btn-next .btn-next-slide {
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  background-color: var(--violet-tertiaire);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-btn-next .btn-next-slide:hover {
+  box-shadow: 0px 0px 5px 5px var(--white);
+}
+
+#dob-prince {
+  padding-left: 10%;
+  padding-top: 10%;
+  display: flex;
+  justify-content: center;
+}
+#dob-prince .contenu-text {
+  width: 600px;
+}
+#dob-prince .contenu-text h3 {
+  margin: 20px 0px;
+  font-size: 20px;
+}
+#dob-prince .contenu-text p span {
+  display: block;
+  margin-bottom: 20px;
+  text-align: justify;
+  font-size: 0.8em;
+}
+#dob-prince .presentation {
+  margin-left: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#dob-prince .presentation .img-panther {
+  margin-bottom: 50px;
+  width: 80%;
+}
+#dob-prince .presentation .profil {
+  width: 400px;
+  background-color: var(--white-primaire);
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 40%;
+  text-align: center;
+}
+#dob-prince .presentation .profil img {
+  margin-top: -60%;
+  width: 80%;
+  /* width: 374px;
+  height: 527px; */
+}
+#dob-prince .presentation .profil .btn-profil {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 10px;
+  border-radius: 5px;
+  font-family: "cantarell";
+  background-color: var(--violet-primaire);
+  color: var(--white);
+  padding: 10px 15px;
+  margin: 10px;
+}
+#dob-prince .presentation .profil .biographie {
+  text-align: left;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 100px;
+}
+#dob-prince .presentation .profil .biographie p span {
+  display: block;
+  margin: 10px;
+  color: var(--violet-tertiaire);
+}
+#dob-prince .presentation .profil .biographie p .detail {
+  font-size: 0.8em;
+  font-style: normal;
+}
+
+/* Section CONTACT  */
+#contact {
+  background-image: url("../assets/1_Landing_page/Pantherhome4.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  padding-top: 10%;
+}
+#contact .contact-main {
+  margin: auto;
+  width: 500px;
+  height: 500px;
+  background-image: linear-gradient(to bottom, var(--white), rgba(255, 255, 255, 0.1));
+  border-radius: 150px;
+  text-align: center;
+  padding: 50px 200px;
+}
+#contact .contact-main .question,
+#contact .contact-main .titre {
+  font-size: 14px;
+  font-family: "cantarell";
+  color: var(--violet-tertiaire);
+}
+#contact .contact-main .titre {
+  font-size: 40px !important;
+  margin-bottom: 20px;
+}
+#contact .contact-main input[type=text],
+#contact .contact-main input[type=email],
+#contact .contact-main textarea {
+  width: 80%;
+  margin: 10px 0px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid var(--violet-tertiaire);
+  height: 48px;
+  padding-left: 20px;
+  border-radius: 28px;
+  resize: none;
+}
+#contact .contact-main textarea {
+  height: 200px;
+}
+#contact .contact-main .btn-index:hover {
+  filter: drop-shadow(0 0 20px var(--violet-tertiaire));
+}
+
+@media (max-width: 800px) {
+  /* ####### RESPONSIVE SPECIFIQUE A LA PAGE INDEX ######## */
+  /* Propriete Responsive de la section black panther */
+  .section-panther .intro-panther {
+    margin: auto;
+    width: 90%;
+    text-align: center;
+    /* margin: 100px 0px; */
+  }
+  .section-panther .intro-panther .texte-intro {
+    display: block;
+    width: auto;
+  }
+  /* Fin  */
+  /* style responsive  section slide hero */
+  .container-slides {
+    margin-left: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container-slides .card {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 90%;
+    height: auto;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .container-slides .card img {
+    width: 80%;
+  }
+  .container-slides .card .img-active {
+    height: auto;
+    transform: none;
+  }
+  /* Fin section slide hero */
+  /* Propriete responsive Section naissance du prince */
+  #dob-prince {
+    padding: 0;
+    padding-top: 10%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  #dob-prince .presentation {
+    margin: auto;
+    width: 90%;
+    margin-top: 300px;
+  }
+  #dob-prince .presentation .profil {
+    width: 90%;
+  }
+  #dob-prince .contenu-text {
+    width: 90%;
+  }
+  /* Fin Section naissance du prince */
+  /* Responsive Section CONTACT  */
+  #contact .contact-main {
+    width: 90%;
+    height: auto;
+    border-radius: 100px;
+    padding: 20px 0px;
+  }
+  /* fin section CONTACT */
+}/*# sourceMappingURL=home.css.map */

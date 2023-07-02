@@ -1,0 +1,248 @@
+/* scrollbar */
+
+html::-webkit-scrollbar-track {
+    background-color: #24334f;
+  }
+  
+  html::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+  }
+  
+  html::-webkit-scrollbar-thumb {
+    background-color: #c9c8c87a;
+    border-radius: 10px;
+  }
+  
+  html::-webkit-scrollbar-thumb:hover {
+    background-color: #b3b2b26c;
+  }
+  
+  html::-webkit-scrollbar-corner {
+    background-color: #1b2538;
+  }
+  
+  
+  /* text animation */
+  
+  .text-container {
+      opacity: 0;
+      animation: slide-in 1s forwards;
+    }
+    
+    @keyframes slide-in {
+      0% {
+        opacity: 0;
+        transform: translateX(-100px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    .slide-left {
+      transition: transform 0.4s;
+    }
+    
+    .slide-right {
+      transition: transform 0.4s;
+    }
+    
+    .slide-left:hover {
+      transform: translateX(-10px);
+    }
+    
+    .slide-right:hover {
+      transform: translateX(10px);
+    }
+  
+    /* SLIDE IN ANIMATION */
+  
+    h1, h2, p {
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    h1, h2, p, a, img {
+      animation: 1s slide-right;
+    }
+    
+    @keyframes slide-right {
+      from {
+        margin-left: -100%;
+      }
+    
+      to {
+        margin-left: 0%;
+      }
+    }
+    
+     /* SLIDE IN ANIMATION END */
+/* Definition de style global */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: "panthera";
+    font-size: 68px;
+    font-style: regular;
+    color: var(--white-violet-1);
+    margin: 10px 0px;
+}
+
+h2,
+h3 {
+    font-family: "beyno";
+    font-size: 32px;
+    font-style: regular;
+    color: var(--white-violet-1);
+}
+
+p {
+    font-family: "cantarell";
+    font-size: 14px;
+    color: white;
+}
+
+body {
+    background-image: url(/ressources/assets/arrière_plan.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+}
+
+.btn-form {
+    font-family: "cantarell";
+    font-style: bold;
+    width: 174px;
+    height: 54px;
+    border-radius: 38px;
+    color: var(--violet-tertiaire);
+    border: 0;
+    background-color: var(--white-primaire);
+}
+
+
+/* ### POPUP BOX  */
+
+.box-popup {
+    position: fixed;
+    top: 20%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    background: linear-gradient(to bottom, #3D2DA6 10%, #021740 100%);
+    .popup {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 80%;
+        border-radius: 25px;
+        background: linear-gradient(to bottom, #9E91B7 30%, #3D2DA6 100%);
+        p {
+            text-transform: uppercase;
+            font-family: "cantarell";
+            font-size: 20px;
+        }
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: var(--viloet-tertiaire);
+            background-color: var(--white-primaire);
+            border-radius: 25px;
+            padding: 15px 20px;
+            margin: 50px 0px;
+        }
+        .chrono {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            #hour {
+                display: block;
+                text-align: center;
+            }
+        }
+    }
+}
+
+// ########################################################
+// ################ REPONSIVE POPUP ######################
+@media (max-width: 800px) {
+    .box-popup {
+        top: 15%;
+        left: 5%;
+        width: 90%;
+        height: 70%;
+    }
+}
+
+
+/* FIN POPUP  */
+
+// SOCIAL LOGO HEADER
+.social-logo-header {
+    position: absolute;
+    top: 0;
+    left: 2.5%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid var(--white-violet-1);
+    border-bottom: 0;
+    border-top: 0;
+    border-right: 0;
+    .ligne {
+        height: 40vh;
+        border: 1px solid var(--white-violet-1);
+    }
+    .icon-social {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        img {
+            margin: 0px;
+            margin: 10px 10px;
+            padding-top: 5px;
+        }
+    }
+    .icon-social :hover {filter: sepia(1000%) saturate(10000%) hue-rotate(247deg) contrast(53%)}
+}
+
+header .menu ul li a:hover,
+header .menu .active {
+    transform: scale(1.1);
+    color: var(--rosé1);
+    transition: .1s ease-in-out;
+}
+
+.logo-header:hover {
+    filter: sepia(1000%) saturate(10000%) hue-rotate(247deg) contrast(53%)
+}
+
+// FIN
+// Propriété Canvas
+#div-canvas {
+    z-index: 2;
+    position: fixed;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    // cursor: none;
+}
+
+// Fin canvas
+
+/* Fin de style global */
